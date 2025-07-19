@@ -1,0 +1,67 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "mlops"
+version = "0.0.1"
+description = "mlops"
+authors = [
+  { name = "vik" },
+]
+
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    
+]
+dependencies = [
+    "boto3>=1.39.9",
+    "dagshub>=0.5.10",
+    "docker>=7.1.0",
+    "dvc>=3.61.0",
+    "fastapi>=0.116.1",
+    "ipython",
+    "joblib>=1.5.1",
+    "jupyter>=1.1.1",
+    "jupyterlab",
+    "matplotlib",
+    "mkdocs",
+    "mlflow>=3.1.1",
+    "notebook",
+    "numpy",
+    "pandas",
+    "pingouin>=0.5.5",
+    "pip",
+    "polars>=1.31.0",
+    "prophet>=1.1.7",
+    "pydantic>=2.11.7",
+    "pytest",
+    "python-dotenv",
+    "python-multipart>=0.0.20",
+    "requests>=2.32.4",
+    "ruff",
+    "scikit-learn",
+    "scipy>=1.16.0",
+    "seaborn>=0.13.2",
+    "statsmodels>=0.14.5",
+    "tensorflow>=2.14.0",
+    "torch>=2.7.1",
+    "transformers>=4.53.2",
+    "uvicorn>=0.35.0",
+]
+requires-python = "~=3.11.0"
+
+
+[tool.ruff]
+line-length = 99
+src = ["mlops"]
+include = ["pyproject.toml", "mlops/**/*.py"]
+
+[tool.ruff.lint]
+extend-select = ["I"]  # Add import sorting
+
+[tool.ruff.lint.isort]
+known-first-party = ["mlops"]
+force-sort-within-sections = true
+
